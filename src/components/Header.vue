@@ -1,4 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<!-- HEADER -->
+
 <template>
     <div class="container">
         <div class="logo">
@@ -13,11 +15,26 @@
 </template>
 
 
+<script>
+export default {
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: 'Header',
+    props: ['btns'],
+    data: function() {
+        return {
+            buttons: JSON.parse(this.btns.replace(/'/g, '"'))
+        }
+    }
+}
+</script>
+
+
 <style lang="scss" scoped>
 @import '@/assets/style.scss';
 
 .container {
-    padding: rem(26) 0;
+    padding-top: rem(26);
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -26,6 +43,7 @@
 .logo {
     display: flex;
     flex-direction: row;
+    @include adaptive-value(gap, rem(24), rem(24), rem(24), rem(24), rem(22));
     gap: rem(24);
     align-items: center;
 
@@ -37,12 +55,12 @@
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 800;
-        font-size: rem(24);
+        @include adaptive-value(font-size, rem(24), rem(24), rem(24), rem(24), rem(22));
         color: #000000;
     }
 }
 .btns {
-    display: flex;
+    @include adaptive-value(display, flex, flex, flex, none, none);
     flex-direction: row;
     gap: rem(40);
 
@@ -54,6 +72,7 @@
         color: #000000;
         cursor: pointer;
         position: relative;
+        text-decoration: none;
 
         &:after {
             display: block;
@@ -66,6 +85,9 @@
             transition: width .15s ease-in-out;
             transform: translateX(-50%);
         }
+        &:active {
+            background-color: rgba($color: #000000, $alpha: 0);
+        }
         &:hover:after,
         &:focus:after {
             width: 100%;
@@ -73,15 +95,3 @@
     }
 }
 </style>
-
-
-<script>
-export default {
-    props: ['btns'],
-    data: function() {
-        return {
-            buttons: JSON.parse(this.btns.replace(/'/g, '"'))
-        }
-    }
-}
-</script>

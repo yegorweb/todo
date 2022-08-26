@@ -1,24 +1,27 @@
-# todo
+# **TODO Application** #
 
-## Project setup
-```
-yarn install
-```
+[**Посмотреть результат** (See result)]()
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+[**Figma design**](https://www.figma.com/file/SASwdhletc5IMkuyhlkJtH/TODOApplication?node-id=0%3A1)
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+----------
+### **Состояние проекта:** :negative_squared_cross_mark: Не доделан
+----------
+## Этапы проекта:
+- [X] Создание Vue проекта
+- [X] Сделать шапку
+    - [X] Адаптировать шапку
+    - [ ] Сделать меню
+- [X] Сделать строку ввода названия задачи
+    - [ ] Написать функционал
+- [X] Сделать кнопки сортировки задач
+    - [ ] Написать функционал
+- [ ] Сделать список задач
+    - [ ] Сделать компонент задачи
+        - [ ] Написать функционал
+        - [ ] Адаптировать
+    - [ ] Написать функционал
+- [ ] Сделать сохранение задач
+----------
+### **Application and design author:**
+Made with :heart: by Егор Князев (Yegor Knyazev)
