@@ -5,7 +5,7 @@
 [**Figma design**](https://www.figma.com/file/SASwdhletc5IMkuyhlkJtH/TODOApplication?node-id=0%3A1)
 
 ----------
-### **Состояние проекта:** :negative_squared_cross_mark: Не доделан
+### **Состояние проекта:** :x: Не доделан
 ----------
 ## Этапы проекта:
 - [X] Создание Vue проекта
