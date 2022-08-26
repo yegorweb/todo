@@ -1,11 +1,8 @@
 # __TODO Application__ #
 
-[__Посмотреть результат__ (See result)]()
+[__Посмотреть результат__ (See result)]()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Figma design__](https://www.figma.com/file/SASwdhletc5IMkuyhlkJtH/TODOApplication?node-id=0%3A1)
 
-[__Figma design__](https://www.figma.com/file/SASwdhletc5IMkuyhlkJtH/TODOApplication?node-id=0%3A1)
-
-
-### __Состояние проекта:__ :x: Не доделан
+## Состояние проекта:&nbsp; :x: Не доделан
 
 ## Этапы проекта:
 - [X] Создание Vue проекта
@@ -23,5 +20,7 @@
     - [ ] Написать функционал
 - [ ] Сделать сохранение задач
 
-### __Application and design author:__
+----------
+
+## Application and design author:
 Made with :heart: by Егор Князев (Yegor Knyazev)
