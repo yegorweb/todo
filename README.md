@@ -2,7 +2,7 @@
 
 [__Посмотреть результат__ (See result)]()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Figma design__](https://www.figma.com/file/SASwdhletc5IMkuyhlkJtH/TODOApplication?node-id=0%3A1)
 
-## Состояние проекта:&nbsp; :x: Не доделан
+## Состояние проекта:&nbsp; :x: Не доделан &nbsp;&nbsp;![45%](https://progress-bar.dev/50)
 
 ## Этапы проекта:
 - [X] Создание Vue проекта
