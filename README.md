@@ -4,9 +4,9 @@
 
 [__Figma design__](https://www.figma.com/file/SASwdhletc5IMkuyhlkJtH/TODOApplication?node-id=0%3A1)
 
-----------
+
 ### __Состояние проекта:__ :x: Не доделан
-----------
+
 ## Этапы проекта:
 - [X] Создание Vue проекта
 - [X] Сделать шапку
@@ -22,6 +22,6 @@
         - [ ] Адаптировать
     - [ ] Написать функционал
 - [ ] Сделать сохранение задач
-----------
+
 ### __Application and design author:__
 Made with :heart: by Егор Князев (Yegor Knyazev)
