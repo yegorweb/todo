@@ -8,8 +8,8 @@
             <div class="logo-text">TODO Application</div>
         </div>
         <div class="btns">
-            <template v-for="btn in buttons"
-            :key="btn.id"><a class="btns__item">{{ btn }}</a></template>
+            <a href="https://github.com/yegych9923" class="btns__item">Author</a>
+            <a href="https://github.com/yegych9923/todo" class="btns__item">GitHub</a>
         </div>
     </div>
 </template>
@@ -18,13 +18,7 @@
 <script>
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Header',
-    props: ['btns'],
-    data: function() {
-        return {
-            buttons: JSON.parse(this.btns.replace(/'/g, '"'))
-        }
-    }
+    name: 'Header'
 }
 </script>
 

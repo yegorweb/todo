@@ -1,15 +1,21 @@
 <!-- HOME PAGE -->
 
 <template>
-  <Header btns="['Author', 'GitHub']" />
+  <Header />
   <div class="manage-container">
     <Input v-bind:input="input" />
     <Buttons @mode="changeMode(m)" v-bind:mode="mode" />
   </div>
-  <div class="container todoList">
-    
+  <div class="container todoList" v-if="todos.length>0">
+    <div class="line"></div>
+    <div class="todoList-items">
+        <template v-for="todo in todos" 
+        :key="todo">
+            <TodoItem @changeTodo="changeTodo(s, id)" v-bind:todo="todo" />
+        </template>
+    </div>
+    <div class="line"></div>
   </div>
-  {{mode}}
 </template>
 
 
@@ -18,24 +24,40 @@
 import Header from '@/components/Header.vue'
 import Input from '@/components/Input.vue'
 import Buttons from '@/components/Buttons.vue'
+import TodoItem from '@/components/TodoItem.vue'
 
 export default {
   name: 'HomeView',
   components: {
     Header,
     Input,
-    Buttons
+    Buttons,
+    TodoItem
   },
   data: function() {
     return {
       input: '',
-      mode: 'all'
+      mode: 'all',
+      todos: [{
+        id: 1,
+        text: 'todo 1',
+        completed: false
+      },
+      {
+        id: 2,
+        text: 'todo 2',
+        completed: false
+      }]
     }
   },
   methods: {
     changeMode(m) {
         this.mode = m
         console.log(m)
+    },
+    changeTodo(s, id) {
+        console.log('here')
+        this.todos[id].completed = s
     }
   }
 }
@@ -51,5 +73,26 @@ export default {
   gap: rem(18);
   margin: 0 auto;
   margin-top: rem(28);
+}
+.todoList {
+    margin-top: rem(27);
+
+    .line {
+        margin: 0 auto;
+        width: 80%;
+        height: rem(1);
+        background: #ACACAC;
+    }
+    &-items {
+        margin: rem(21) 0;
+        display: flex;
+        flex-direction: column;
+        gap: rem(25);
+        min-width: 100%;
+
+        & > * {
+            min-width: 100%;
+        }
+    }
 }
 </style>
