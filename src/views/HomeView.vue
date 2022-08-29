@@ -11,7 +11,7 @@
     <div class="todoList-items">
         <template v-for="todo in todos" 
         :key="todo">
-            <TodoItem @changeTodo="changeTodo(s, id)" v-bind:todo="todo" />
+            <TodoItem v-bind:todo="todo" />
         </template>
     </div>
     <div class="line"></div>
@@ -40,24 +40,28 @@ export default {
       mode: 'all',
       todos: [{
         id: 1,
-        text: 'todo 1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         completed: false
       },
       {
         id: 2,
-        text: 'todo 2',
+        text: 'Wash plates',
+        completed: false
+      },
+      {
+        id: 3,
+        text: 'Try to center a div',
         completed: false
       }]
     }
+  },
+  mounted: function() {
+    
   },
   methods: {
     changeMode(m) {
         this.mode = m
         console.log(m)
-    },
-    changeTodo(s, id) {
-        console.log('here')
-        this.todos[id].completed = s
     }
   }
 }
