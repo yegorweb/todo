@@ -3,9 +3,9 @@
 
 <template>
     <div class="buttons-container">
-        <div @click="change('all')" class="btn selected">All</div>
-        <div @click="change('completed')" class="btn">Completed</div>
-        <div @click="change('uncompleted')" class="btn">Uncompleted</div>
+        <div @click="change('all')" v-bind:class="{selected: this.currentMode=='all'}" class="btn">All</div>
+        <div @click="change('completed')" v-bind:class="{selected: this.currentMode=='completed'}" class="btn">Completed</div>
+        <div @click="change('uncompleted')" v-bind:class="{selected: this.currentMode=='uncompleted'}" class="btn">Uncompleted</div>
     </div>
 </template>
 
@@ -23,7 +23,8 @@ export default {
     },
     methods: {
         change(m) {
-            this.$emit("mode", m)
+            this.$emit("change-mode", m)
+            this.currentMode = m
         }
     }
 }

@@ -4,18 +4,34 @@
   <Header />
   <div class="manage-container">
     <Input v-bind:input="input" v-on:add-todo="addTodo" />
-    <Buttons @mode="changeMode(m)" v-bind:mode="mode" />
+    <Buttons v-on:change-mode="changeMode" v-bind:mode="mode" />
   </div>
   <div class="container todoList" v-if="todos.length>0">
     <div class="line"></div>
     <div class="todoList-items">
-      <TodoItem 
+      <template 
         v-for="(todo, id) in todos"
         :key="todo"
-        v-bind:id="id"
-        v-bind:todo="todo"
-        v-on:remove-todo="removeTodo"
-      />
+      >
+        <TodoItem 
+          v-if="this.mode=='all'"
+          v-bind:id="id"
+          v-bind:todo="todo"
+          v-on:remove-todo="removeTodo"
+        />
+        <TodoItem 
+          v-if="this.mode=='completed' && todo.completed"
+          v-bind:id="id"
+          v-bind:todo="todo"
+          v-on:remove-todo="removeTodo"
+        />
+        <TodoItem 
+          v-if="this.mode=='uncompleted' && !todo.completed"
+          v-bind:id="id"
+          v-bind:todo="todo"
+          v-on:remove-todo="removeTodo"
+        />
+      </template>
     </div>
     <div class="line"></div>
   </div>
@@ -44,6 +60,9 @@ export default {
       todos: []
     }
   },
+  mounted: function() {
+    //this.todos = document.cookie == '' ? [] : document.cookie
+  },
   methods: {
     changeMode(m) {
         this.mode = m
@@ -59,6 +78,7 @@ export default {
           completed: false
         }
         this.todos.push(newTodo)
+        //document.cookie = encodeURIComponent(this.todos)
       }
     }
   }

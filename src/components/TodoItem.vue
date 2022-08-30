@@ -82,7 +82,11 @@
     border: rem(1) solid #8C8C8C;
     border-radius: rem(6);
     cursor: pointer;
+    transition: all .15s;
 
+    &:hover {
+        background: #d6d6d6;
+    }
     & > * {
         width: rem(16);
         height: rem(16);
