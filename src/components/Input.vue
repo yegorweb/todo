@@ -3,8 +3,8 @@
 
 <template>
     <div class="input-container">
-        <button class="btn">+</button>
-        <input type="text" placeholder="Some text..." />
+        <button class="btn" @click="$emit('add-todo', this.title); this.title=''">+</button>
+        <input type="text" placeholder="Some text..." v-model="title" @keyup.enter="$emit('add-todo', this.title); this.title=''" />
     </div>
 </template>
 
@@ -13,7 +13,12 @@
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: 'Input',
-    props: ['input']
+    props: ['input'],
+    data: function() {
+        return {
+            title: ''
+        }
+    }
 }
 </script>
 

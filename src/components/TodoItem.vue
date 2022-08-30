@@ -5,10 +5,10 @@
     <div class="container">
         <div class="manage">
             <input type="checkbox" class="doneBtn" :todo="todo" @input="this.todoo.completed = $event.target.checked" />
-            <div class="num">{{this.todo.id}}</div>
+            <div class="num" v-bind:class="{done: todo.completed}">{{id+1}}</div>
         </div>
-        <div class="text">{{this.todo.text}}</div>
-        <button class="delBtn"><img src="@/assets/delete.svg" alt="Delete"></button>
+        <div class="text" v-bind:class="{done: todo.completed}">{{todo.text}}</div>
+        <button class="delBtn" @click="$emit('remove-todo', id)"><img src="@/assets/delete.svg" alt="Delete"></button>
     </div>
 </template>
 
@@ -69,6 +69,9 @@
     line-height: rem(20);
     color: #000000;
 }
+.done {
+    text-decoration: line-through;
+}
 .delBtn {
     width: rem(30);
     height: rem(30);
@@ -92,10 +95,11 @@
 <script>
 export default {
     name: 'TodoItem',
-    props: ['todo'],
+    props: ['todo', 'id'],
     data: function() {
         return {
-            todoo: this.todo
+            todoo: this.todo,
+            todoss: this.todos
         }
     }
 }

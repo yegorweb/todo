@@ -3,16 +3,19 @@
 <template>
   <Header />
   <div class="manage-container">
-    <Input v-bind:input="input" />
+    <Input v-bind:input="input" v-on:add-todo="addTodo" />
     <Buttons @mode="changeMode(m)" v-bind:mode="mode" />
   </div>
   <div class="container todoList" v-if="todos.length>0">
     <div class="line"></div>
     <div class="todoList-items">
-        <template v-for="todo in todos" 
-        :key="todo">
-            <TodoItem v-bind:todo="todo" />
-        </template>
+      <TodoItem 
+        v-for="(todo, id) in todos"
+        :key="todo"
+        v-bind:id="id"
+        v-bind:todo="todo"
+        v-on:remove-todo="removeTodo"
+      />
     </div>
     <div class="line"></div>
   </div>
@@ -38,30 +41,25 @@ export default {
     return {
       input: '',
       mode: 'all',
-      todos: [{
-        id: 1,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
-        completed: false
-      },
-      {
-        id: 2,
-        text: 'Wash plates',
-        completed: false
-      },
-      {
-        id: 3,
-        text: 'Try to center a div',
-        completed: false
-      }]
+      todos: []
     }
-  },
-  mounted: function() {
-    
   },
   methods: {
     changeMode(m) {
         this.mode = m
         console.log(m)
+    },
+    removeTodo(id) {
+      this.todos.splice(id, 1)
+    },
+    addTodo(text) {
+      if (text != '') {
+        const newTodo = {
+          text: text,
+          completed: false
+        }
+        this.todos.push(newTodo)
+      }
     }
   }
 }
@@ -80,6 +78,7 @@ export default {
 }
 .todoList {
     margin-top: rem(27);
+    margin-bottom: rem(27);
 
     .line {
         margin: 0 auto;
