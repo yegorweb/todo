@@ -2,7 +2,7 @@
 
 [__Посмотреть результат__ (See result)](https://yegych9923.github.io/todo)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Figma design__](https://www.figma.com/file/SASwdhletc5IMkuyhlkJtH/TODOApplication?node-id=0%3A1)
 
-## Состояние проекта:&nbsp; :heavy_check_mark: Не доделан &nbsp;&nbsp;![95%](https://progress-bar.dev/90)
+## Состояние проекта:&nbsp; :heavy_check_mark: Сделан &nbsp;&nbsp;![95%](https://progress-bar.dev/90)
 
 ## Этапы проекта:
 - [X] Создание Vue проекта
