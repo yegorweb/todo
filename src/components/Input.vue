@@ -4,7 +4,7 @@
 <template>
     <div class="input-container">
         <button class="btn" @click="$emit('add-todo', this.title); this.title=''">+</button>
-        <input type="text" placeholder="Some text..." v-model="title" @keyup.enter="$emit('add-todo', this.title); this.title=''" />
+        <input autofocus type="text" placeholder="Some text..." v-model="title" @keyup.enter="$emit('add-todo', this.title); this.title=''" />
     </div>
 </template>
 
@@ -38,6 +38,11 @@ export default {
     border-radius: rem(8);
     background: #E6E6E6;
     border: rem(1) solid #8C8C8C;
+    transition: all .15s;
+
+    &:hover {
+        background: #dddddd;
+    }
 }
 .btn {
     height: 100%;
@@ -49,6 +54,10 @@ export default {
     color: #000000;
     text-align: center;
     cursor: pointer;
+
+    &:focus {
+        background: #E6E6E6;
+    }
 }
 input {
     max-height: 100%;

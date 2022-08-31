@@ -37,11 +37,10 @@ export default {
     max-width: 100%;
     display: flex;
     padding: rem(3);
-    margin: 0 rem(-1.5);
     gap: rem(3);
     @include adaptive-value(flex-direction, row, row, row, row, column);
     @include adaptive-value(align-items, center, center, center, center, none);
-    justify-content: space-around;
+    justify-content: space-between;
     background: #E6E6E6;
     border-radius: rem(8);
     border: rem(1) solid #8C8C8C;
@@ -50,7 +49,6 @@ export default {
     text-align: center;
     padding: rem(5) rem(32);
     min-width: auto;
-    margin: 0 rem(1.5);
     //@include adaptive-value(padding, rem(5) rem(26), rem(5) rem(26), rem(5) rem(26), rem(5) rem(26), rem(5) auto);
     border-radius: rem(6);
     cursor: pointer;
@@ -62,6 +60,6 @@ export default {
 }
 .selected {
     background: #CACACA;
-    box-shadow: 0 0 0 rem(1) inset #8C8C8C;
+    box-shadow: 0 0 0 rem(1) inset #9c9c9c;
 }
 </style>

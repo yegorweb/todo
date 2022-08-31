@@ -4,7 +4,7 @@
     <div>{{this.todo.completed}}</div> -->
     <div class="container">
         <div class="manage">
-            <input type="checkbox" class="doneBtn" :todo="todo" @input="this.todoo.completed = $event.target.checked" />
+            <input type="checkbox" v-model="completed" class="doneBtn" :todo="todo" @input="this.todoo.completed = $event.target.checked" />
             <div class="num" v-bind:class="{done: todo.completed}">{{id+1}}</div>
         </div>
         <div class="text" v-bind:class="{done: todo.completed}">{{todo.text}}</div>
@@ -103,8 +103,12 @@ export default {
     data: function() {
         return {
             todoo: this.todo,
-            todoss: this.todos
+            todoss: this.todos,
+            completed: false
         }
+    },
+    mounted: function() {
+        this.completed = this.todo.completed
     }
 }
 </script>

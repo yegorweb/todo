@@ -1,7 +1,6 @@
 <!-- HOME PAGE -->
 
 <template>
-  <Header />
   <div class="manage-container">
     <Input v-bind:input="input" v-on:add-todo="addTodo" />
     <Buttons v-on:change-mode="changeMode" v-bind:mode="mode" />
@@ -32,6 +31,24 @@
           v-on:remove-todo="removeTodo"
         />
       </template>
+      <div v-if="this.mode=='completed' && todos.every(t => t.completed == false)" style="
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: rem(16);
+        color: #000000;
+        margin: 0 auto;
+        text-align: center;
+      ">Nothing completed 😔</div>
+      <div v-else-if="this.mode=='uncompleted' && todos.every(t => t.completed == true)" style="
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: rem(16);
+          color: #000000;
+          margin: auto;
+          text-align: center;
+        ">All completed 🎉</div>
     </div>
     <div class="line"></div>
   </div>
@@ -40,7 +57,6 @@
 
 <script>
 // @ is an alias to /src
-import Header from '@/components/Header.vue'
 import Input from '@/components/Input.vue'
 import Buttons from '@/components/Buttons.vue'
 import TodoItem from '@/components/TodoItem.vue'
@@ -48,7 +64,6 @@ import TodoItem from '@/components/TodoItem.vue'
 export default {
   name: 'HomeView',
   components: {
-    Header,
     Input,
     Buttons,
     TodoItem
@@ -99,6 +114,9 @@ export default {
 .todoList {
     margin-top: rem(27);
     margin-bottom: rem(27);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .line {
         margin: 0 auto;

@@ -1,8 +1,13 @@
 <!-- Мой первый Vue проект. Не судите строго ) -->
 
 <template>
+    <Header />
 	<router-view />
 </template>
+
+<script setup>
+import Header from '@/components/Header.vue'
+</script>
 
 <!-- Global styles -->
 <style>

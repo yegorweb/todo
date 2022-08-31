@@ -11,6 +11,9 @@
             <a href="https://github.com/yegych9923" class="btns__item">Author</a>
             <a href="https://github.com/yegych9923/todo" class="btns__item">GitHub</a>
         </div>
+        <router-link class="menu" to="/menu">
+            <img src="@/assets/menu.svg" alt="menu" />
+        </router-link>
     </div>
 </template>
 
@@ -57,6 +60,7 @@ export default {
     @include adaptive-value(display, flex, flex, flex, none, none);
     flex-direction: row;
     gap: rem(40);
+    float: right;
 
     &__item {
         font-family: 'Montserrat';
@@ -87,5 +91,9 @@ export default {
             width: 100%;
         }
     }
+}
+.menu {
+    @include adaptive-value(display, none, none, none, block, block);
+    float: right;
 }
 </style>
